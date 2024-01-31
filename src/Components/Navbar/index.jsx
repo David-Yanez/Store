@@ -114,7 +114,7 @@ export const Navbar = () => {
           </NavLink>
         </li>
         <li className='flex'>
-          <img src={iconShop} alt='icono shop' className='w-6 h-6' /> <span className='pl-1'>{context.count}</span>
+          <img src={iconShop} alt='icono shop' className='w-6 h-6' /> <span className='pl-1'>{context.cartProducts.length}</span>
         </li>
       </ul>
     </nav>
