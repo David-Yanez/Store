@@ -4,6 +4,11 @@ import iconDelete from '../../assets/delete.svg'
 
 export const OrderCard = (props) => {
   const { id, title, imageUrl, price, handleDelete } = props
+
+  let renderDeletIcon
+  if (handleDelete) {
+    renderDeletIcon = <img src={iconDelete} alt='cancel icon' className='h-5 w-5' onClick={() => handleDelete(id)} />
+  }
   return (
     <div className='flex justify-between items-center mb-3'>
       <div className='flex items-center gap-2'>
@@ -14,7 +19,7 @@ export const OrderCard = (props) => {
       </div>
       <div className='flex items-center gap-2'>
         <p className='text-lg font-medium'>{price}</p>
-        <img src={iconDelete} alt='cancel icon' className='h-5 w-5' onClick={() => handleDelete(id)} />
+        {renderDeletIcon}
       </div>
     </div>
   )
