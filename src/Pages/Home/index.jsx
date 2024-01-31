@@ -7,40 +7,18 @@ export const Home = () => {
   const context = useContext(ShoopingCartContext)
 
   const renderView = () => {
-    if (context.searchByTitle?.length > 0) {
-      if (context.filteredItems?.length > 0) {
-        return (
-          context.filteredItems?.map(item => (
-            <Card key={item.id} data={item} />
-          ))
-        )
-      } else {
-        return (
-          <div>We don't have anything :(</div>
-        )
-      }
-    } else {
+    if (context.filteredItems?.length > 0) {
       return (
-        context.items?.map(item => (
+        context.filteredItems?.map(item => (
           <Card key={item.id} data={item} />
         ))
+      )
+    } else {
+      return (
+        <div>We don't have anything :(</div>
       )
     }
   }
-
-  /* const renderView = () => {
-    if (context.searchByTitle?.length > 0) {
-      return (
-        <div>holaaaaaaaaa</div>
-      )
-    } else {
-      return (
-        context.items?.map(item => (
-          <Card key={item.id} data={item} />
-        ))
-      )
-    }
-  } */
 
   return (
     <>
